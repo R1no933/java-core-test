@@ -1,5 +1,7 @@
 package ru.baskakov;
 
+import java.util.Optional;
+
 public class OrderService {
     private final OrderRepository orderRepository;
 
@@ -12,7 +14,7 @@ public class OrderService {
     }
 
     public double calculateTotal(int id) {
-        return orderRepository.getOrderById(id).isPresent() ?
-                orderRepository.getOrderById(id).get().getTotalPrice() : 0;
+        Optional<Order> optOrder = orderRepository.getOrderById(id);
+        return optOrder.map(Order::getTotalPrice).orElse(0.0);
     }
 }
