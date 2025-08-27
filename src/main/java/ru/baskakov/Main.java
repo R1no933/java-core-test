@@ -1,17 +1,17 @@
 package ru.baskakov;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Order order1 = new Order(1, "Grocess", 10, 310.50);
+        Order order2 = new Order(0, "Griss", 0, 310.50);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.println(order1.getProductName());
+        System.out.println(order1.getId());
+        System.out.println(order1.getTotalPrice());
+
+        System.out.println(order2.getProductName());
+        System.out.println(order2.getId());
+        System.out.println(order2.getTotalPrice());
+
     }
 }
